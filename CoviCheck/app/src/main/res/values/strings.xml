@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CoviCheck</string>
+    <string name="measure_respiratory_rate">Measure Respiratory Rate</string>
+    <string name="covid_19_symptom_monitoring_system">Covid-19 Symptom Monitoring System</string>
+    <string name="measure_heart_rate">Measure Heart Rate</string>
+    <string name="respiratory_rate_measurement">Respiratory Rate Measurement</string>
+    <string name="heart_rate_measurement">Heart Rate Measurement</string>
+    <string name="read_from_file">Read from file</string>
+    <string name="record_blood_flow">Record Blood Flow</string>
+</resources>
