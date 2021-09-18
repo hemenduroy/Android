@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".symptomrating.SymptomRating">
+
+    <TextView
+        android:id="@+id/textViewNausea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/nausea"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingNausea"
+        app:layout_constraintEnd_toStartOf="@+id/ratingNausea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingNausea"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <TextView
+        android:id="@+id/textViewMuscle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/muscle_ache"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingMuscle"
+        app:layout_constraintEnd_toStartOf="@+id/ratingMuscle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingMuscle" />
+
+    <TextView
+        android:id="@+id/textViewLoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/loss_of_smell_or_taste"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingLoss"
+        app:layout_constraintEnd_toStartOf="@+id/ratingLoss"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingLoss" />
+
+    <TextView
+        android:id="@+id/textViewCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/cough"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingCough"
+        app:layout_constraintEnd_toStartOf="@+id/ratingCough"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingCough" />
+
+    <TextView
+        android:id="@+id/textViewShortness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/shortness_of_breath"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingShortness"
+        app:layout_constraintEnd_toStartOf="@+id/ratingShortness"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingShortness" />
+
+    <TextView
+        android:id="@+id/textViewTired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/feeling_tired"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingTired"
+        app:layout_constraintEnd_toStartOf="@+id/ratingTired"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingTired" />
+
+    <TextView
+        android:id="@+id/textViewFever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/fever"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingFever"
+        app:layout_constraintEnd_toStartOf="@+id/ratingFever"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingFever" />
+
+    <TextView
+        android:id="@+id/textViewSore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/sore_throat"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingSore"
+        app:layout_constraintEnd_toStartOf="@+id/ratingSore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingSore" />
+
+    <TextView
+        android:id="@+id/textViewHeadache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/headache"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingHeadache"
+        app:layout_constraintEnd_toStartOf="@+id/ratingHeadache"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ratingHeadache" />
+
+    <RatingBar
+        android:id="@+id/ratingNausea"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingHeadache"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewNausea"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingHeadache"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingDiarrhea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/textViewHeadache"
+        app:layout_constraintTop_toBottomOf="@+id/ratingNausea"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingDiarrhea"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingSore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewDiarrhea"
+        app:layout_constraintTop_toBottomOf="@+id/ratingHeadache"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingSore"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingFever"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewSore"
+        app:layout_constraintTop_toBottomOf="@+id/ratingDiarrhea"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingFever"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingMuscle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewFever"
+        app:layout_constraintTop_toBottomOf="@+id/ratingSore"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingLoss"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingCough"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLoss"
+        app:layout_constraintTop_toBottomOf="@+id/ratingMuscle"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingCough"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingShortness"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCough"
+        app:layout_constraintTop_toBottomOf="@+id/ratingLoss"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingShortness"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingTired"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewShortness"
+        app:layout_constraintTop_toBottomOf="@+id/ratingCough"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingTired"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="37dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewTired"
+        app:layout_constraintTop_toBottomOf="@+id/ratingShortness"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RatingBar
+        android:id="@+id/ratingMuscle"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/ratingLoss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewMuscle"
+        app:layout_constraintTop_toBottomOf="@+id/ratingFever"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/rate_symptoms2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDiarrhea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/diarrhea"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingDiarrhea"
+        app:layout_constraintEnd_toStartOf="@+id/ratingDiarrhea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingHeadache"
+        app:layout_constraintVertical_bias="0.452" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_symptoms"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name here"
+        app:layout_constraintBottom_toTopOf="@+id/ratingNausea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

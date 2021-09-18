@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
+import com.example.covicheck.breathingmeasurement.BreathingMeasurement;
+import com.example.covicheck.heartratemeasurement.HeartRateMeasurement;
+import com.example.covicheck.symptomrating.SymptomRating;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button heartButton = findViewById(R.id.buttonHeart);
         Button breatheButton = findViewById(R.id.buttonBreathe);
+        Button symptomsButton = findViewById(R.id.buttonSymptoms);
         //Open Heart measurement activity
         heartButton.setOnClickListener(new View.OnClickListener() {
 
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 openBreatheActivity();
             }
         });
+        //open symptom rating activity
+        symptomsButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                openSymptomActivity();
+            }
+        });
     }
 
     public void openHeartActivity() {
@@ -45,5 +54,10 @@ public class MainActivity extends AppCompatActivity {
     public void openBreatheActivity() {
         Intent breathingActivityIntent = new Intent(this, BreathingMeasurement.class);
         startActivity(breathingActivityIntent);
+    }
+
+    public void openSymptomActivity() {
+        Intent symptomActivityIntent = new Intent(this, SymptomRating.class);
+        startActivity(symptomActivityIntent);
     }
 }

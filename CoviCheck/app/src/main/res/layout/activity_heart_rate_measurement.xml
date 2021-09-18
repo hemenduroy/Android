@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeartRateMeasurement">
+    tools:context=".heartratemeasurement.HeartRateMeasurement">
 
     <TextView
         android:id="@+id/textView2"
@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.179"
+        app:layout_constraintVertical_bias="0.039"
         tools:ignore="OnClick" />
 
     <Button
@@ -43,41 +43,28 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cameraButton"
-        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintVertical_bias="0.028"
         tools:ignore="OnClick" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parseVideoButton"
-        app:layout_constraintVertical_bias="0.209"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/todo" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.922" />
-
+    <!--
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
-        android:layout_width="378dp"
-        android:layout_height="186dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:layout_width="364dp"
+        android:layout_height="169dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="284dp"
+        android:layout_height="219dp"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parseVideoButton" />
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
