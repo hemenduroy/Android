@@ -117,7 +117,7 @@ public class BreathingMeasurement extends AppCompatActivity {
                 for (int x=0;x<peaks.size();x++)
                     System.out.println("peak " + peaks.get(x));*/
                 //calc peaks end
-                int fps=8,timeW=20,sampleSize=fps*timeW,index=0,count=0;
+                int pps=8,timeW=10,sampleSize=pps*timeW,index=0,count=0; //phone recorded 450 points in 60 seconds => sampling rate = 450/60=7.5 ~ 8 points per second
                 ArrayList<Integer> Br = new ArrayList<>();
                 while (index< movAvgmovDiff.size()-sampleSize) {
                     ArrayList<Double> sampleData = new ArrayList<>();
