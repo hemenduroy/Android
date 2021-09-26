@@ -16,7 +16,7 @@ public class RetrieveVideoMetadata implements Runnable {
 
         String sdcardDir = Environment.getExternalStorageDirectory().getPath();
         //System.out.println(sdcardDir);
-        String filePath = sdcardDir + "/Movies/FingertipVideo.mp4";
+        String filePath = sdcardDir + "/FingertipVideo.mp4";
         //System.out.println(filePath);
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
         mediaMetadataRetriever.setDataSource(filePath);

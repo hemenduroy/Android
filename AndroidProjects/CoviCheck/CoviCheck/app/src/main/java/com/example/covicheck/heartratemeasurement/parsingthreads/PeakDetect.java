@@ -22,7 +22,7 @@ public class PeakDetect implements Runnable{
         ArrayList<Double> LPFECG = new ArrayList<>();
         ArrayList<Double> HPFECG = new ArrayList<>();
 
-        for (int i=12; i<=44; i++) {
+        for (int i=12; i<=44; i++) { //44
             int index=i-12;
             if(index<2)
                 LPFECG.add(index, (0.5*(RawECG.get(i) - 2*RawECG.get(i-6) + RawECG.get(i - 12))));
@@ -31,9 +31,9 @@ public class PeakDetect implements Runnable{
             //System.out.println("LPFECG : " + LPFECG.get(index));
         }
 
-        for (int i = 45; i<RawECG.size(); i++) {
+        for (int i = 45; i<RawECG.size(); i++) { //45
             int index = i - 12;
-            int index2 = i - 45;
+            int index2 = i - 45; //45
             LPFECG.add(index, (0.5 * (2 * LPFECG.get(index - 1) - LPFECG.get(index - 2) + RawECG.get(i) - 2 * RawECG.get(i - 6) + RawECG.get(i - 12))));
             if (index2 < 1)
                 HPFECG.add(index2,(1.0 / 32.0) * (32.0 * LPFECG.get(index - 16) + (LPFECG.get(index) - LPFECG.get(index - 32))));

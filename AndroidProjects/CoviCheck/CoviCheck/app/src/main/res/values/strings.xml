@@ -24,4 +24,6 @@
     <string name="loss_of_smell_or_taste">Loss of smell or taste</string>
     <string name="muscle_ache">Muscle Ache</string>
     <string name="read_file">Read File</string>
+    <string name="record_heart_rate">record heart rate</string>
+    <string name="record_respiratory_rate">record respiratory rate</string>
 </resources>

@@ -9,7 +9,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
-
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,6 +21,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import com.example.covicheck.heartratemeasurement.parsingthreads.ParseByteArray;
 import com.example.covicheck.heartratemeasurement.parsingthreads.ParseVideo;
@@ -58,66 +59,66 @@ public class HeartRateMeasurement extends AppCompatActivity {
         graph.getViewport().setXAxisBoundsManual(true);*/
 
         //Camera Preview Window
+        final boolean[] isVideoRecorded = {false};
+        Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        cameraButton.setOnClickListener(view -> {
-            final int CAMERA_PERMISSION_CODE = 102;
-            final int WRITE_STORAGE_PERMISSION_CODE = 103;
-            // Function to check and request camera access permission
-            checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
-            // Function to check and request write storage permission
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_STORAGE_PERMISSION_CODE);
-            Intent cameraIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-            //Limit capture to 46 seconds
-            cameraIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT,46);
-            //To save with Custom file name
-            cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-            startActivityForResult(cameraIntent,1);
-        });
-
-        parseVideoButton.setOnClickListener(view -> {
-
-            final int READ_STORAGE_PERMISSION_CODE = 101;
-            // Function to check and request read storage permission
-            checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE, READ_STORAGE_PERMISSION_CODE);
-            String sdcardDir = Environment.getExternalStorageDirectory().getPath();
-            String filePath = sdcardDir + "/Movies/FingertipVideo.mp4";
-            //String filePath = sdcardDir + MediaStore.Video.Media.D;
-            //System.out.println("File path : " + filePath);
-            File tempFile = new File(filePath);
-
-            //ParseVideo parseVideoThread = new ParseVideo(graph);
-            Thread t1 = new Thread(parseVideoThread);
-            if (tempFile.exists()) {
-                //System.out.println("Test");
-                t1.start();
-                try {
-                    t1.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("File does not exist!");
+                final int CAMERA_PERMISSION_CODE = 102;
+                final int WRITE_STORAGE_PERMISSION_CODE = 103;
+                // Function to check and request camera access permission
+                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
+                // Function to check and request write storage permission
+                checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_STORAGE_PERMISSION_CODE);
+                Intent cameraIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                //Limit capture to 46 seconds
+                cameraIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT,46);
+                //To save with Custom file name
+                cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                //Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
+                isVideoRecorded[0] = true;
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+                startActivityForResult(cameraIntent,1);
             }
         });
 
+        parseVideoButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                final int READ_STORAGE_PERMISSION_CODE = 101;
+                // Function to check and request read storage permission
+                checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE, READ_STORAGE_PERMISSION_CODE);
+                String sdcardDir = Environment.getExternalStorageDirectory().getPath();
+                String filePath = null;
+                if (isVideoRecorded[0])
+                    filePath = fileUri.getPath();
+                else
+                    filePath = sdcardDir + "/FingertipVideo.mp4";
+                //String filePath = sdcardDir + MediaStore.Video.Media.D;
+                //System.out.println("File path : " + filePath);
+                File tempFile = new File(filePath);
+
+                //ParseVideo parseVideoThread = new ParseVideo(graph);
+                Thread t1 = new Thread(parseVideoThread);
+                if (tempFile.exists()) {
+                    //System.out.println("Test");
+                    t1.start();
+                    try {
+                        t1.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    System.out.println("File does not exist!");
+                }
+            }
+
+        });
+
     }
-
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK && requestCode == 1) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            VideoView videoView = new VideoView(this);
-            videoView.setVideoURI(data.getData());
-            videoView.start();
-            builder.setView(videoView).show();
-        }
-    }*/
 
     // Function to check and request permission
     public void checkPermission(String permission, int requestCode) {
@@ -151,6 +152,7 @@ public class HeartRateMeasurement extends AppCompatActivity {
 
         // Create the storage directory if it does not exist
         if (!mediaStorageDir.exists()) {
+            System.out.println("does not exist");
             if (!mediaStorageDir.mkdirs()) {
                 Log.d(videoFolderName, "Oops! Failed create " + videoFolderName + " directory");
                 return null;
@@ -158,8 +160,7 @@ public class HeartRateMeasurement extends AppCompatActivity {
         }
 
         // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
-                Locale.getDefault()).format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
         File mediaFile;
         /*if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator
@@ -167,6 +168,7 @@ public class HeartRateMeasurement extends AppCompatActivity {
         } else */
         if (type == MEDIA_TYPE_VIDEO) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator + "VID_" + timeStamp + ".mp4");
+            System.out.println("vid path " + mediaFile.getPath());
         } else
             return null;
 

@@ -175,7 +175,7 @@ public class ParseVideo implements Runnable{
             BPM+= Hr.get(tempcount);
         }
         BPM/= Hr.size();
-        //BPM=Math.a(Hr);
+        //BPM=mode(Hr);
         System.out.println("BPM : " + BPM);
     }
 

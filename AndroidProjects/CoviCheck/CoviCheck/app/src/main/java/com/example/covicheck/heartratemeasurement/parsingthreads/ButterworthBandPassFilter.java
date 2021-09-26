@@ -24,8 +24,8 @@ public class ButterworthBandPassFilter implements Runnable {
     }
 
     public double[] returnSignalResult() {
-        return signal; //filter OFF
-        //return result; //filter ON
+        //return signal; //filter OFF
+        return result; //filter ON
     }
 
 }
