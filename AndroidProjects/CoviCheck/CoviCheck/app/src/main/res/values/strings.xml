@@ -26,4 +26,6 @@
     <string name="read_file">Read File</string>
     <string name="record_heart_rate">record heart rate</string>
     <string name="record_respiratory_rate">record respiratory rate</string>
+    <string name="bpm">- BPM</string>
+    <string name="brpm">- BRPM</string>
 </resources>

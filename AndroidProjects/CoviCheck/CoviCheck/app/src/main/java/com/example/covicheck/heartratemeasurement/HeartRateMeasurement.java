@@ -9,7 +9,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
-import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -17,12 +16,14 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
+import com.example.covicheck.MainActivity;
 import com.example.covicheck.heartratemeasurement.parsingthreads.ParseByteArray;
 import com.example.covicheck.heartratemeasurement.parsingthreads.ParseVideo;
 import com.example.covicheck.R;
@@ -73,7 +74,7 @@ public class HeartRateMeasurement extends AppCompatActivity {
                 checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_STORAGE_PERMISSION_CODE);
                 Intent cameraIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
                 //Limit capture to 46 seconds
-                cameraIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT,46);
+                //cameraIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT,46);
                 //To save with Custom file name
                 cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 //Uri fileUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
@@ -92,7 +93,7 @@ public class HeartRateMeasurement extends AppCompatActivity {
                 // Function to check and request read storage permission
                 checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE, READ_STORAGE_PERMISSION_CODE);
                 String sdcardDir = Environment.getExternalStorageDirectory().getPath();
-                String filePath = null;
+                String filePath;
                 if (isVideoRecorded[0])
                     filePath = fileUri.getPath();
                 else
@@ -114,6 +115,9 @@ public class HeartRateMeasurement extends AppCompatActivity {
                 } else {
                     System.out.println("File does not exist!");
                 }
+                TextView bpmField = findViewById(R.id.textView5);
+                bpmField.setText(parseVideoThread.getBPM() + " BPM");
+                //finish();
             }
 
         });

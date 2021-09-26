@@ -11,26 +11,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="92dp"
+        android:layout_marginTop="64dp"
         android:onClick="onClick"
         android:text="@string/measure_heart_rate"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBreathe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/buttonBreathe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="312dp"
+        android:layout_marginTop="56dp"
         android:onClick="onClick"
         android:text="@string/measure_respiratory_rate"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHeart"
         tools:ignore="OnClick" />
 
     <TextView
@@ -39,13 +39,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="28dp"
         android:text="@string/covid_19_symptom_monitoring_system"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHeart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSymptoms"
@@ -57,5 +56,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonBreathe"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintVertical_bias="0.116" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

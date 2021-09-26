@@ -137,7 +137,7 @@ public class ParseVideo implements Runnable{
         //System.out.println("test2");
         //System.out.println("R : " + redBucket);
 
-        int fps=30,timeW=10,sampleSize=fps*timeW,index=0,count=0,x=0;
+        int fps=30,timeW=20,sampleSize=fps*timeW,index=0,count=0,x=0;
         ArrayList<Double> peaks;
         //int Hr[] = new int[]{};
         ArrayList<Integer> Hr = new ArrayList<>();

@@ -2,12 +2,16 @@ package com.example.covicheck.breathingmeasurement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.covicheck.MainActivity;
 import com.example.covicheck.R;
 import com.example.covicheck.heartratemeasurement.parsingthreads.PeakDetect;
 
@@ -150,7 +154,9 @@ public class BreathingMeasurement extends AppCompatActivity {
                 System.out.println("RPM : " + RPM);
                 //thread
                 //System.out.println("size of peaks : " + peaks.size());
-
+                TextView brpmField = findViewById(R.id.textView4);
+                brpmField.setText(RPM + " BRPM");
+                //finish();
             }
         });
 
