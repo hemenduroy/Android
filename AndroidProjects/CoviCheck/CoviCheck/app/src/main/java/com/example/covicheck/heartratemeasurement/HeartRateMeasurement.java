@@ -1,14 +1,8 @@
 package com.example.covicheck.heartratemeasurement;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,17 +12,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+
+import com.example.covicheck.R;
+import com.example.covicheck.heartratemeasurement.parsingthreads.ParseVideo;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
-import com.example.covicheck.MainActivity;
-import com.example.covicheck.heartratemeasurement.parsingthreads.ParseByteArray;
-import com.example.covicheck.heartratemeasurement.parsingthreads.ParseVideo;
-import com.example.covicheck.R;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GridLabelRenderer;
 
 public class HeartRateMeasurement extends AppCompatActivity {
     //Video name properties

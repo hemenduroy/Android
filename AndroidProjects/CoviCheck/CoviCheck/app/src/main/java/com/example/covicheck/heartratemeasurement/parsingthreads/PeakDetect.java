@@ -2,7 +2,6 @@ package com.example.covicheck.heartratemeasurement.parsingthreads;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.lang.Math;
 
 public class PeakDetect implements Runnable{
     private final ArrayList<Double> RawECG;

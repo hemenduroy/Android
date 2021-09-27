@@ -1,7 +1,5 @@
 package com.example.covicheck.symptomrating;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.covicheck.R;
 import com.example.covicheck.breathingmeasurement.BreathingMeasurement;
 import com.example.covicheck.heartratemeasurement.HeartRateMeasurement;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 public class SymptomRating extends AppCompatActivity{

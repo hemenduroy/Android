@@ -1,9 +1,5 @@
 package com.example.covicheck.breathingmeasurement;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,7 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.covicheck.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.covicheck.R;
 import com.example.covicheck.heartratemeasurement.parsingthreads.PeakDetect;
 
@@ -56,7 +53,7 @@ public class BreathingMeasurement extends AppCompatActivity {
                 if (isCSVRecorded)
                     breatheFile = sensorHandler.getCsvFolderPath();
                 else
-                    breatheFile = Environment.getExternalStorageDirectory().getPath() + "/CSVBreathe19.csv";
+                    breatheFile = Environment.getExternalStorageDirectory().getPath() + "/CSVBreathe27V1.csv";
                 //System.out.println("folder name from breathe : " + breatheFile2);
                 try {
                     scanner = new Scanner(new File(breatheFile));

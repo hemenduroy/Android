@@ -4,13 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 
 import java.util.ArrayList;
-import java.lang.Math;
-import java.util.OptionalDouble;
-import java.util.stream.IntStream;
-
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class ParseVideo implements Runnable{
     //GraphView graph;
